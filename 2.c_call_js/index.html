@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wasm</title>
+  </head>
+  <body id="content">
+    test c call js function
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <script>
+    var Module = {
+      onRuntimeInitialized: function () {
+        console.log("result from js to c: ", Module._getWidth());
+      },
+    };
+
+    fetch("./README.md").then((res) =>
+      res.text().then((md) => {
+        document.getElementById("content").innerHTML = marked(md);
+      })
+    );
+  </script>
+  <script src="./hello.js"></script>
+</html>
