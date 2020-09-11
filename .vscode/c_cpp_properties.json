@@ -4,7 +4,6 @@
       "name": "Mac",
       "includePath": [
         "${workspaceFolder}/**",
-        // update to your emsdk installed path
         "/Users/apanoo/emsdk/upstream/emscripten/system/include"
       ],
       "defines": [],
